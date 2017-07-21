@@ -1,0 +1,25 @@
+﻿@model ProductApplication.Models.SaleModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="~/Content/bootstrap.css">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Sale Reciept</h2>
+            <span class="show-grid-block">
+                @Html.Partial("_SaleView")
+            </span>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <h2>Available Products</h2>
+                @foreach (var item in Model.Products)
+                {
+                    @Html.Partial("_ProductTile", item)
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model ProductApplication.Models.Product
+<div class="col-md-3">
+    @using (Html.BeginForm("Index", "Products", FormMethod.Post))
+{
+    @Html.Hidden("productId", Model.Id)
+    @Html.Hidden("productName", Model.Name)
+    @Html.Hidden("productPrice", Model.Price)
+    @Html.Hidden("productUrl", Model.ImageUrl)
+    @Html.Hidden("productDescription", Model.Description)
+    <input class="img-responsive" type="image" src="@Model.ImageUrl">
+}
+    <h4>@Model.Name</h4>
+    <p>@Model.Description</p>
+    <p>Price: @Model.Price</p>
+</div>
+

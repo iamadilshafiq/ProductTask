@@ -1,0 +1,33 @@
+﻿@model ProductApplication.Models.SaleModel
+
+<div class="row">
+    @if (Model.SaleItems != null)
+    {
+        <div class="col-md-4">
+            <h4>Name</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>Unit Price</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>Quantity</h4>
+        </div>
+        foreach (var item in Model.SaleItems)
+        {
+        <div class="col-md-4">
+            <p>@item.ProductItem.Name</p>
+        </div>
+        <div class="col-md-4">
+            <p>@item.ProductItem.Price</p>
+        </div>
+        <div class="col-md-4">
+            <p>@item.Quantity</p>
+        </div>
+        }
+        <div class="row">
+            <div class="col-md-12">
+                <p><b>Total Payment PKR : @Model.totalPayment</b></p>
+            </div>
+        </div>
+    }
+</div>
